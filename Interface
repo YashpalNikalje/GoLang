@@ -1,0 +1,38 @@
+//
+package main
+
+import "fmt"
+
+type Car interface {
+	Drive()
+	Stop()
+}
+type Lmabo struct {
+	LamboModel string
+}
+
+func NewModel(arg string) Car {
+	return &Lambo{arg}
+}
+
+type Chevy struct {
+	ChevyModel string
+}
+
+func (l *Lambo) Stop() {
+	fmt.Println("Stoping Lambo..")
+}
+func (l *Lambo) Drive() {
+	fmt.Println("Lambo on Move..")
+	fmt.Println(l.LamboModel)
+}
+func (c *Chevy) Drive() {
+	fmt.Println("Chevy  on Move..")
+	fmt.Println(c.ChevyModel)
+}
+func main() {
+	l := Newmodel("Gallardo")
+	c := Chevy("C")
+	l.Drive()
+	c.Drive()
+}
