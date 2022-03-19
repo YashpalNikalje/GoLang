@@ -1,0 +1,30 @@
+//
+
+
+package main
+
+import "fmt"
+
+func main() {
+	var n, min, max, cmin, cmax, t int
+	fmt.Scan(&n)
+
+	for i := 0; i < n; i++ {
+		fmt.Scan(&t)
+		if i == 0 {
+			min = t
+			max = t
+		} else {
+			if t < min {
+				cmin++
+				min = t
+			}
+			if t > max {
+				max = t
+				cmax++
+			}
+		}
+	}
+	fmt.Println(cmax, cmin)
+
+}
