@@ -1,4 +1,6 @@
-
+// To find the number of all the integers which satisfy two given conditions.
+// i)The integers of first given array are all factors of the selected integer i.e. all the numbers in the first array should divide the given integer perfectly.
+// ii)The integer being chosen divides all the numbers of second array perfectly.
 
 package main 
 
