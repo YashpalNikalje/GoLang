@@ -1,0 +1,26 @@
+
+
+package main
+import(
+    "fmt"
+)
+func main() {
+    var T,V int
+    fmt.Scan(&T)
+    for i:=0; i<T;i++ {
+        fmt.Scan(&V)
+        if V==0 {
+            fmt.Printf("1\n")
+        }else {
+            var k uint
+            if (V%2==0) {
+                k= uint(V/2)+1
+                V=(1<<k)-1
+            }else {
+                k=uint((V+1)/2)+1
+                V=(1<<k)-2
+            }
+            fmt.Println(V)
+        }
+    }
+}
