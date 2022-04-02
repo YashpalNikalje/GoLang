@@ -1,0 +1,23 @@
+
+
+package main
+import(
+    "fmt"
+)
+func main() {
+    var n, k, max, num, temp int
+    fmt.Scan(&n,&k)
+    max=0
+    for i:=0; i<n; i++ {
+        fmt.Scan(&temp)
+        if temp > max {
+            max=temp
+        }
+    }
+    num= max-k
+    if num<0 {
+        fmt.Println(0)
+    }else{
+        fmt.Println(num)
+    }
+}
