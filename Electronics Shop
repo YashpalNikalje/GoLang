@@ -1,0 +1,33 @@
+
+
+package main
+
+import (
+    "fmt"
+)
+
+func main() {
+    var b, n, m int
+    fmt.Scan(&b)
+    fmt.Scan(&n)
+    fmt.Scan(&m)
+    
+    k := make([]int, n)
+    d := make([]int, m)
+    
+    for i := 0; i < n; i++ {
+        fmt.Scan(&k[i])
+    }
+    for i := 0; i < m; i++ {
+        fmt.Scan(&d[i])
+    }
+    var total int = -1
+    for i := 0; i < n; i++ {
+        for j := 0; j < m; j++ {
+            if k[i]+d[j] <= b && k[i]+d[j] > total {
+                total = k[i] + d[j]
+            }
+        }
+    }
+    fmt.Println(total)
+}
