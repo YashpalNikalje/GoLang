@@ -1,0 +1,27 @@
+
+
+package main
+
+import (
+    "fmt"
+    "math"
+)
+
+func main() {
+    var i, q int
+    fmt.Scan(&q)
+    var x, y, z float64
+    for i < q {
+        fmt.Scan(&x)
+        fmt.Scan(&y)
+        fmt.Scan(&z)
+        if math.Abs(x-z) < math.Abs(y-z) {
+            fmt.Println("Cat A")
+        } else if math.Abs(x-z) > math.Abs(y-z) {
+            fmt.Println("Cat B")
+        } else {
+            fmt.Println("Mouse C")
+        }
+        i += 1
+    }
+}
