@@ -1,0 +1,27 @@
+
+
+package main 
+import(
+    "fmt"
+)
+func main() {
+    var s int
+    var p string
+    fmt.Scan(&s)
+    fmt.Scan(&p)
+    a:=0
+    valley:=0
+    for i:=0;i<len(p);i++ {
+        d:=0
+        if p[i]=='U' {
+            d++
+        }else {
+            d--
+        }
+        a+=d
+        if a==0 && d==1 {
+             valley++
+        }
+    }
+    fmt.Println(valley)
+}
