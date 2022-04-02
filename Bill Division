@@ -1,0 +1,29 @@
+
+
+package main
+import(
+    "fmt"
+)
+func main() {
+    var n,k int
+     fmt.Scan(&n,&k)
+    
+    a := make([]int,n)
+    arrSum := 0
+    for i := 0; i < n; i++ {
+        fmt.Scan(&a[i])
+        if i!=k {
+            arrSum+=a[i]
+        }
+    }  
+    var b int
+    fmt.Scan(&b)
+    if b == arrSum/2 {
+        fmt.Println("Bon Appetit")
+    } else {
+        fmt.Println(a[k]/2)
+    }      
+}
+
+   
+
