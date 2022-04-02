@@ -1,0 +1,23 @@
+
+
+package main
+import(
+    "fmt"
+)
+func main() {
+    var n int
+    fmt.Scan(&n)
+    a:=make([]int, n)
+    maps:= make(map[int]int)
+    for i:=0; i<n; i++ {
+        fmt.Scan(&a[i])
+        maps[a[i]]++
+    }
+    maxCount:=0
+    for k,v:= range maps {
+        if (v+ maps[k+1]) > maxCount {
+            maxCount= v+maps[k+1]
+        }
+    }
+    fmt.Println(maxCount)
+}
