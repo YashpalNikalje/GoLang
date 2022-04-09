@@ -1,0 +1,30 @@
+
+
+package main
+
+import (
+    "fmt"
+)
+func main() {
+    var n,k int
+    fmt.Scan(&n,&k)
+    
+    c := make([]int, n)
+    for i:=0; i<n; i++ {
+        fmt.Scan(&c[i])
+    }
+    e := 100
+    p := 0
+    for {
+        p = (p+k)%n
+        if c[p] == 0 {
+            e = e-1
+        }else {
+            e = e-3
+        }
+        if p == 0 {
+        break
+        }
+    }
+    fmt.Println(e)
+}
