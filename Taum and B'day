@@ -1,0 +1,22 @@
+
+
+package main
+import(
+    "fmt"
+)
+func main() {
+    var t int
+    var b,w,bc,wc,z uint
+    fmt.Scan(&t)
+    for i:=0; i<t; i++ {
+        fmt.Scan(&b, &w)
+        fmt.Scan(&bc, &wc, &z)
+        if bc + z < wc {
+            wc = bc+z
+        }
+        if wc + z < bc {
+            bc = wc + z
+        }
+        fmt.Println(b*bc + w*wc)
+    }
+}
