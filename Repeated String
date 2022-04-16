@@ -1,0 +1,24 @@
+
+
+package main
+import(
+    "fmt"
+)
+func main() {
+    var s string
+    var n, c int
+    fmt.Scan(&s)
+    fmt.Scan(&n)
+    for _, x:= range s {
+        if x == 'a' {
+            c++
+        }
+    }
+    result := (n/ len(s)) * c
+    for _, x := range s[:n%len(s)] {
+        if x == 'a' {
+            result++
+        }
+    }
+    fmt.Println(result)
+}
