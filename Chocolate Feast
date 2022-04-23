@@ -1,0 +1,26 @@
+
+
+package main
+import(
+    "fmt"
+)
+func main() {
+    var test, n ,c, m int
+     fmt.Scan(&test)
+     for i:=0; i<test; i++ {
+         fmt.Scan(&n, &c, &m)
+         chocolate, wrappers := 0, 0
+         for {
+             if wrappers == m {
+                 wrappers = 0
+             }else if n>=c {
+                 n -= c
+             }else {
+                 break
+             }
+             chocolate++
+             wrappers++
+         }
+         fmt.Println(chocolate)
+     }
+}
