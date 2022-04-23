@@ -1,0 +1,38 @@
+
+
+package main
+
+import "fmt"
+
+func main() {
+    var l int
+    line := make([]int, 4)
+    for i := 0; i < 4; i++ {
+        fmt.Scan(&l)
+        line = append(line[:i], l)
+    }
+    p := line[0]
+    d := line[1]
+    m := line[2]
+    s := line[3]
+    var total, c int
+    po := p
+    for total <= s {
+        if c == 0 {
+            total = p
+            c++
+        } else {
+            price := po - d
+            if price <= m {
+                total += m
+                c++
+            } else {
+                total += price
+                c++
+            }
+            po = price
+        }
+    }
+    game := c - 1
+    fmt.Println(game)
+}
