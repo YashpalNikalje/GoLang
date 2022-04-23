@@ -1,0 +1,24 @@
+
+
+package main
+import(
+    "fmt"
+)
+func main() {
+    var n int
+    fmt.Scan(&n)
+    
+    a:= make([]int, n)
+    for i,_ := range a {
+        fmt.Scan(&a[i])
+    }
+    d := -1
+    for i:=0; i<n; i++ {
+        for j:=i+1; j<n; j++ {
+            if a[i]==a[j] && (j-i < d || d == -1) {
+                d = j-i
+            }
+        }
+    }
+    fmt.Println(d)
+}
