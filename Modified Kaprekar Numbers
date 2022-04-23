@@ -1,0 +1,36 @@
+
+
+package main
+import(
+    "fmt"
+)
+func main() {
+    var p, q int
+    fmt.Scan(&p, &q)
+    digit :=0
+    num:=p
+    divisor := 1
+    for num>0 {
+        digit++
+        num/=10
+        divisor *= 10
+    }
+    found := false
+    for i:=p; i<=q; i++ {
+        l := (i*i)/divisor
+        r := (i*i)%divisor
+        if i > divisor {
+            divisor *= 10
+        }
+        if r==0 {
+            continue
+        }
+        if l+r == i {
+            found = true
+            fmt.Print(i," ")
+        }
+    }
+    if found == false {
+        fmt.Println("INVALID RANGE")
+    }
+}
