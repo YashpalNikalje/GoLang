@@ -1,0 +1,28 @@
+
+
+package main
+import(
+    "fmt"
+)
+func main() {
+    var n, cases int
+    fmt.Scan(&n, &cases)
+    way:= make([]int, n)
+    for i:=0; i<n; i++ {
+        fmt.Scan(&way[i])
+    }
+    var start, end int
+    for i:=0; i<cases; i++ {
+        fmt.Scan(&start, &end)
+        var largest = 3
+        for j:=start; j<=end; j++{
+            if way[j] < largest {
+                largest = way[j]
+                if largest == 1 {
+                    break
+                }
+            }
+        }
+        fmt.Println(largest)
+    }
+}
